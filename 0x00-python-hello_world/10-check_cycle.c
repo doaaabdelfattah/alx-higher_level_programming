@@ -14,7 +14,7 @@ return (0);
 start = list->next;
 temp = list->next->next;
 
-while (start != NULL && temp != NULL)
+while (start != NULL && temp != NULL && temp->next != NULL)
 {
 if (start == temp)
 return (1);
