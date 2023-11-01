@@ -7,7 +7,7 @@ def pow(a, b):
         print('-1')
         return -1
     else:
-        for b:
+        while pow < b:
             a = a * a
-    print("{}".format(a))
+            pow += pow
     return a
