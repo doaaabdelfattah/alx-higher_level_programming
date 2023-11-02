@@ -12,14 +12,13 @@ if __name__ == "__main__":
 
     operators = ['+', '-', '*', '/']
     op = sys.argv[2]
-    a = int(sys.argv[1])
-    b = int(sys.argv[3])
-
     # Check the operator
     if op not in operators:
         print("Unknown operator. Available operators: +, -, * and / ")
         sys.exit(1)
 
+    a = int(sys.argv[1])
+    b = int(sys.argv[3])
     # Calculate
     if op == '+':
         print("{} + {} = {}".format(a, b, add(a, b)))
