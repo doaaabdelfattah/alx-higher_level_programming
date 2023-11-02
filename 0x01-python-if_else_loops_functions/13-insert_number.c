@@ -16,6 +16,15 @@ new_node = malloc(sizeof(listint_t));
 if (new_node == NULL)
 return (NULL);
 new_node->n = number;
+
+/*inserting the new node at the beginning */
+if (tmp == NULL || tmp->n >= number)
+{
+    new_node->next = tmp;
+    *head = new_node;
+    return (new_node);
+}
+
 while (tmp != NULL && tmp->n < number)
 {
 prev = tmp;
