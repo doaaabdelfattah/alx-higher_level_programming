@@ -10,7 +10,7 @@ def roman_to_int(roman_string):
         'M': 1000,
     }
     result = 0
-    if isinstance(roman_string, str) and roman_string != None:
+    if isinstance(roman_string, str) and roman_string is not None:
         for i in range(len(roman_string)):
             value = roman_num[roman_string[i]]
             if i < len(roman_string) - 1 and \
@@ -18,7 +18,7 @@ def roman_to_int(roman_string):
                 result -= value
             else:
                 result += value
-                
+
         return result
     else:
         return 0
