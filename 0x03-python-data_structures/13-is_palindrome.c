@@ -25,15 +25,15 @@ int is_palindrome(listint_t **head)
 	}
 	/* if fast reach to null, this means even linked list */
 	/* We have to move the slow one more step to point to the next half */
-	if (fast)
+	/* STEP 2: Reverse the second half */
+    if (fast)
 		slow = reverse_list(&slow);
 	else
 	{
 		slow = slow->next;
 		slow = reverse_list(&slow);
 	}
-	/* STEP 2: Reverse the second half */
-
+    /* STEP 3: Check if two halfs are palindrome */
 	while (slow != NULL)
 	{
 		if (first_half->n != slow->n)
@@ -53,7 +53,7 @@ int is_palindrome(listint_t **head)
 listint_t *reverse_list(listint_t **head)
 {
 	listint_t *cur, *prev, *next;
-    
+
 	prev = NULL;
 	next = NULL;
 	cur = *head;
