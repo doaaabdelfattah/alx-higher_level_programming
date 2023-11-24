@@ -3,5 +3,4 @@ class Square:
     """
     This is Class Square definition
     """
-    def __init__(self):
-        pass
+    pass
