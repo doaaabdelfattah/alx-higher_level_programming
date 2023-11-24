@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-"""
-Module Definition
-"""
+"""Module Definition"""
+
+
 class Square:
-    """
-    This is Class Square definition
+    """This is Class Square definition
     """
     pass
