@@ -11,6 +11,7 @@ class Square:
 
         Args:
             size: square size(pivate)
+            position: tuble of two.
         """
         self.__size = size
         self.__position = position
@@ -22,7 +23,7 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if not (isinstance(value, tuple) and len(value) == 2):
+        if not isinstance(value, tuple) or not len(value) == 2:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
