@@ -1,0 +1,53 @@
+===============================
+ How to Use 0-add_integer
+===============================
+
+This library is very simple, since it only has one function called
+``my_function()``.
+
+Numbers
+=======
+
+``add_integer()`` returns the product of its arguments.  
+For numbers,
+that value is equivalent to using the ``+`` operator.
+
+::
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(2, 5)
+    7
+
+===========================
+
+It also works with floating-point values.
+
+    >>> add_integer(2.0, 3)
+    5
+
+    >>> add_integer(2.0, 3.0)
+    5
+
+===========================
+
+It gives TypeError message with Non-Numbers
+
+    >>> add_integer('s', 3)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer(3, "g")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+    
++++++++++++++++++++++
+
+With None
+
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer(1, None)
+    Traceback (most recent call last):
+    TypeError: b must be an integer

@@ -1,0 +1,84 @@
+===============================
+ How to Use matrix_divided
+===============================
+
+This library is very simple, since it only has one function called
+``matrix_divided()``.
+
+Numbers
+=======
+For numbers,
+that value is equivalent to using the ``\`` operator.
+
+::
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+    >>> matrix = [[1, 2, 3],[4, 5, 6]]
+    >>> print(matrix_divided(matrix, 3))
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+===========================
+
+    >>> matrix = [[3, 6, 9],[12, 15, 18]]
+    >>> print(matrix_divided(matrix, 3))
+    [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+===========================
+It also works with floating-point values.
+
+    >>> matrix = [[3.1, 6, 9],[12, 15, 18]]
+    >>> print(matrix_divided(matrix, 3))
+    [[1.03, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+===========================
+It gives TypeError message with Non-Numbers
+
+    >>> matrix = 55
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = [3, 5, 7]
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = [3, 'p', 7]
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = [[3, 'p', 7],[5, 7, 9]]
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    
++++++++++++++++++++++
+It gives TypeError message if matrix not the same size of rows
+
+    >>> matrix = [[3, 7],[5, 7, 9]]
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
+    
++++++++++++++++++++++++++++
+It gives TypeError message if div isn't number or floating
+
+    >>> matrix = [[3, 6, 9],[12, 15, 18]]
+    >>> print(matrix_divided(matrix, 's'))
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
+
+    >>> matrix = [[3, 6, 9],[12, 15, 18]]
+    >>> print(matrix_divided(matrix, 0))
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero
+

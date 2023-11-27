@@ -1,0 +1,37 @@
+===============================
+ How to Use say_my_name
+===============================
+
+This library is very simple, since it only has one function called
+``say_my_name()``.
+
+
+Normal Case
+================
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+    >>> say_my_name('Doaa', 'Abd') 
+    My name is Doaa Abd
+
+    >>> say_my_name('Doaa')
+    My name is Doaa 
+
+================
+Not string Case
+================
+
+    >>> say_my_name(3, 'Abd') 
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+    +|+|+|+|+|++|+|++|+|++||+|+
+
+    >>> say_my_name('Doaa', 5) 
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+================
+None Case
+================
