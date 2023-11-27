@@ -11,16 +11,16 @@ class Rectangle:
         """
             Initialize rectangle class
         args:
-            width:
-            height:
+            width: width of rectangle
+            height: height of rectangle
         """
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
         """ get width"""
-        return self.width
+        return self.__width
 
     @width.setter
     def width(self, value):
@@ -34,7 +34,7 @@ class Rectangle:
     @property
     def height(self):
         """ get height"""
-        return self.height
+        return self.__height
 
     @height.setter
     def height(self, value):
