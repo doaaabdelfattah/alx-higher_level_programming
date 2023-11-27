@@ -8,7 +8,7 @@ class Rectangle:
     This is Rectangle class
     """
     number_of_instances = 0
-    print_symbol = '#'
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """
@@ -65,7 +65,8 @@ class Rectangle:
             return ""
         else:
             return (
-                '\n'.join([(str(Rectangle.print_symbol)) *  self.__width for _ in range(self.__height)])
+                '\n'.join([(str(self.print_symbol)) *
+                           self.__width for _ in range(self.__height)])
                 )
 
     def __repr__(self):
