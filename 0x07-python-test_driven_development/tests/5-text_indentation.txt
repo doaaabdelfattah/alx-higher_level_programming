@@ -9,6 +9,6 @@ Normal Case
 ================
 
     >>> text_indentation = __import__('5-text_indentation').text_indentation
-    >>> text_indentation('hello doaa. how are you?') 
-    hello.
-    doaa
+    >>> text_indentation("hello?") 
+    hello?
+    <BLANKLINE>

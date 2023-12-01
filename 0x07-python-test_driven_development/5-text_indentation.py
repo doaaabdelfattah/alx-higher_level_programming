@@ -14,10 +14,10 @@ def text_indentation(text):
     """
     characters = [',', '?', ':']
     result = ""
-    if isinstance(text, str):
+    if not isinstance(text, str):
         raise TypeError("text must be a string")
     for c in text:
         result += c
         if c in characters:
-            result += '\n\n'
+            result += '\n'
     print(result)
