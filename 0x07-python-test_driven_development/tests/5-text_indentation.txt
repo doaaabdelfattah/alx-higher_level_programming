@@ -1,0 +1,14 @@
+===============================
+ How to Use text_indentation
+===============================
+
+This library is very simple, since it only has one function called
+``text_indentation()``.
+
+Normal Case
+================
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+    >>> text_indentation('hello. doaa') 
+    hello.
+    doaa
