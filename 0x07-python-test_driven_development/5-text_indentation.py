@@ -17,7 +17,7 @@ def text_indentation(text):
     skip_spaces = True
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    
+
     for c in text:
         if skip_spaces and c == ' ':
             continue
