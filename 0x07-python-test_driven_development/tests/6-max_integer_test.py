@@ -14,6 +14,11 @@ class TestMaxInteger(unittest.TestCase):
         result = max_integer([2, 9, 4, 7])
         self.assertEqual(result, 9)
 
+    def test_max_beg(self):
+        """Test UN ordered list of integers."""
+        result = max_integer([10, 2, 9, 4, 7])
+        self.assertEqual(result, 10)
+
     def test_empty_list(self):
         """Test empty list of integers."""
         result = max_integer([])
