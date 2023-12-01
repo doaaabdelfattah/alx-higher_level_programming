@@ -12,3 +12,9 @@ Normal Case
     >>> text_indentation("hello?") 
     hello?
     <BLANKLINE>
+
+    + No spaces are printed at the beginning of a line.
+    
+    >>> text_indentation("   Hi there.")
+    Hi there.
+    <BLANKLINE>

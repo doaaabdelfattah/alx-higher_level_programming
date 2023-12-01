@@ -14,9 +14,14 @@ def text_indentation(text):
     """
     characters = [',', '?', ':']
     result = ""
+    skip_spaces = True
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     for c in text:
+        if skip_spaces and c == ' ':
+            continue
+        skip_spaces = False  
+        # Set the flag to False after encountering the first non-space character
         result += c
         if c in characters:
             result += '\n'
