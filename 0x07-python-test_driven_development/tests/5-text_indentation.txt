@@ -14,7 +14,13 @@ Normal Case
     <BLANKLINE>
 
     + No spaces are printed at the beginning of a line.
-    
+
     >>> text_indentation("   Hi there.")
     Hi there.
+    <BLANKLINE>
+
+    >>> text_indentation("    Woah now.    This is messy.   ")
+    Woah now.
+    <BLANKLINE>
+    This is messy.
     <BLANKLINE>
