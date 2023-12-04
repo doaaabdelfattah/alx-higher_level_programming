@@ -7,7 +7,8 @@ print(type(bg))
 # print(bg.area())
 bg.integer_validator("my_int", 12)
 
-bg.integer_validator("age", None)
+bg.integer_validator("age", True)
+
 # try:
 #     bg.integer_validator("name", "John")
 # except Exception as e:
