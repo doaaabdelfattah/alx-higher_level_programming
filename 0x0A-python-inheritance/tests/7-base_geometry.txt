@@ -1,0 +1,62 @@
+===============================
+ How to Use 7-base_geometry
+===============================
+
+Test the ability of making instant from class MyList
+==========================
+::
+
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    >>> bg = BaseGeometry()
+    >>> type(bg)
+    <class '7-base_geometry.BaseGeometry'>
+
+::
+
+Test cases for area() Method
+================================
+
+    >>> print(bg.area())
+    Traceback (most recent call last):
+    ...
+    Exception: area() is not implemented
+
+
+Test cases for  integer_validator Method
+======================================
+
+** Normal case
+
+    >>> print(bg.integer_validator("my_int", 12))
+    None
+
+** Case I: if value isn't integer
+
+    >>> bg.integer_validator("name", "John")
+    Traceback (most recent call last):
+    ...
+    TypeError: name must be an integer
+
+** Case II: if value is 0
+
+    >>> bg.integer_validator("age", 0)
+    Traceback (most recent call last):
+    ...
+    ValueError: age must be greater than 0
+
+** Case III: if value is < 0
+
+    >>> bg.integer_validator("age", -6)
+    Traceback (most recent call last):
+    ...
+    ValueError: age must be greater than 0
+
+** Case IV: if value is None
+
+    >>> bg.integer_validator("name", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: name must be an integer
+
+
+
