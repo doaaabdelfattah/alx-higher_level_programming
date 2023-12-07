@@ -29,7 +29,11 @@ Checking for Type:
         <class '1-my_list.MyList'>
 
 
-::
+Checking for empty list:
+        >>> l = MyList()
+        >>> l.print()
+        []
+
 
         >>> my_list = MyList([3])
         >>> print(my_list)
