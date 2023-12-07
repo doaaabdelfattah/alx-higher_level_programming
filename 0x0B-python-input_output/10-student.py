@@ -13,7 +13,8 @@ class Student:
         return self.__dict__
 
     def to_json(self, attrs=None):
-        if (type(attrs) is list):
+        if (type(attrs) is list and
+                all(type(ele) == str for ele in attrs)):
             # if True create Dictionary using dictionary comprehension
             # 1) Iterate over each attribute name (K) in the list attrs
             # 2) For each attribute, it checks if the object (self) \
