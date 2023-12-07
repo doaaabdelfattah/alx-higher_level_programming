@@ -4,7 +4,7 @@ How to Use 1-my_list
 
 Test the ability of making instant from class MyList
 ==========================
-::
+
 Importing function:
 >>> MyList = __import__('1-my_list').MyList
 
