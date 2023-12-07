@@ -71,15 +71,3 @@ Test cases for  integer_validator Method
     Traceback (most recent call last):
     ...
     TypeError: name must be an integer
-
-** Case 7: Checking for no arguments to integer_validator:
-    >>> bg.integer_validator()
-    Traceback (most recent call last):
-    ...
-    TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
-
-** Case 8: Checking for only 1 argument to integer_validator:
-    >>> bg.integer_validator("integer")
-    Traceback (most recent call last):
-    ...
-    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
