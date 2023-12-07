@@ -89,3 +89,9 @@ Test cases for  integer_validator Method
     Traceback (most recent call last):
     ...
     TypeError: age must be an integer
+
+** Case 7: Checking 1 argument
+    >>> bg.integer_validator('age', (4,))
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer

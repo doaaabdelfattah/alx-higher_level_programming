@@ -5,7 +5,7 @@ bg = BaseGeometry()
 
 print(type(bg))
 # print(bg.area())
-bg.integer_validator("age", {3, 4})
+bg.integer_validator('age', (4,))
 
 
 # try:
