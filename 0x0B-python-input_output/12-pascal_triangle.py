@@ -11,7 +11,7 @@ def pascal_triangle(n):
         for row in range(n):
             # Initialize the first row
             if row == 0:
-                triangle.append[1]
+                triangle.append([1])
             else:
                 # Calculate subsequent rows
                 current = [1]
