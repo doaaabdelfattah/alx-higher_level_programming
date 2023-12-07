@@ -19,6 +19,6 @@ class Student:
             # 3) if exist: it add key-value pair to the dict where:
             #   a.Key is attribute
             #   b.Value is the value of attribute
-            {k: getattr(self, k) for k in attrs if hasattr(self, k)}
+            return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
         else:
             return self.__dict__
