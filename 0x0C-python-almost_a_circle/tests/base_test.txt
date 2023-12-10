@@ -1,0 +1,11 @@
+===============================
+ How to Use base.py
+===============================
+
+Test the ability of making instant from class MyList
+==========================
+
+    >>> Base = __import__('models.base').base
+    >>> base_1 = Base()
+    >>> print(type(base_1))
+    <class 'models.base.Base'>
