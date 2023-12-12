@@ -65,9 +65,9 @@ class Base:
             with open(filename, 'r') as file:
                 json_string = file.read()
             # Parse JSON string to a list of dictionaries
-            inst_dict = Base.from_json_string(json_string)
+            inst_dict = cls.from_json_string(json_string)
             # Create instances from Dictionary using Create()
-            instances = [Base.create(**data) for data in inst_dict]
+            instances = [cls.create(**data) for data in inst_dict]
             return instances
         except IOError:
             return []
