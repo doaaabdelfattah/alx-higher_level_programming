@@ -37,7 +37,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         '''Set/get the width of the Rectangle.'''
-        if type(value) != int:
+        if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
@@ -69,16 +69,16 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
-        
+
     def area(self):
         ''' area of Rectangle'''
         return self.width * self.height
-    
+
     def display(self):
         ''' print # in stdout'''
         for row in range(self.height):
             print('#' * self.width)
-    
+
     def __str__(self):
         '''string representation for class'''
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
@@ -96,18 +96,47 @@ class Rectangle(Base):
         #     for _ in range(self.width):
         #         print("#", end='')
         #     print("")
-        
-    def update(self, *args):
-        flag = 0
-        for arg in args:    
-            if flag == 0:
-                self.id = arg
-            elif flag == 1:
-                self.width = arg
-            elif flag ==2:
-                self.height = arg
-            elif flag ==3:
-                self.x = arg
-            elif flag ==4:
-                self.y = arg
-            flag += 1
+
+    def update(self, *args, **kwargs):
+        if args and len(args) != 0:
+            flag = 0
+            for arg in args:
+                if flag == 0:
+                    if arg is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif flag == 1:
+                    self.width = arg
+                elif flag == 2:
+                    self.height = arg
+                elif flag == 3:
+                    self.x = arg
+                elif flag == 4:
+                    self.y = arg
+                flag += 1
+        elif kwargs and len(kwargs) != 0:
+            for key, value in kwargs.items():
+                if key == 'id':
+                    if value is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    self.id = value
+                if key == 'height':
+                    self.height = value
+                if key == 'width':
+                    self.width = value
+                if key == 'x':
+                    self.x = value
+                if key == 'y':
+                    self.y = value
+
+    def to_dictionary(self):
+        ''' Return Dict representation of Rectangle'''
+        Rect_dict = {
+            'id': self.id,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y,
+                }
+        return Rect_dict
