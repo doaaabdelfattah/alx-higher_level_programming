@@ -69,5 +69,5 @@ class Base:
             # Create instances from Dictionary using Create()
             instances = [Base.create(**data) for data in inst_dict]
             return instances
-        except FileNotFoundError:
+        except IOError:
             return []
