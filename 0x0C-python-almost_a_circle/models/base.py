@@ -37,7 +37,7 @@ class Base:
         else:
             json_string = cls.to_json_string(lists_dicts)
         # Save to file
-        with open(filename, 'w', encoding="utf-8") as f:
+        with open(filename, 'w') as f:
             f.write(json_string)
 
     @staticmethod
