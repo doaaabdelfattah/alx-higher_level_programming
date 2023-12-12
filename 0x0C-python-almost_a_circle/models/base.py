@@ -33,9 +33,9 @@ class Base:
             lists_dicts.append(x.to_dictionary())
         # Format string to JSON format
         if list_objs is None:
-            json_string = cls.to_json_string([])
+            json_string = Base.to_json_string([])
         else:
-            json_string = cls.to_json_string(lists_dicts)
+            json_string = Base.to_json_string(lists_dicts)
         # Save to file
         with open(filename, 'w') as f:
             f.write(json_string)
