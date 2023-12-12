@@ -99,6 +99,7 @@ class Rectangle(Base):
         #     print("")
 
     def update(self, *args, **kwargs):
+        ''' Update method'''
         if args and len(args) != 0:
             flag = 0
             for arg in args:
