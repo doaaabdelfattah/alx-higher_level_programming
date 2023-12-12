@@ -62,7 +62,7 @@ class Base:
         filename = str(cls.__name__) + ".json"
         try:
             # Read the file if exist
-            with open(filename, 'r', encoding="utf-8") as file:
+            with open(filename, 'r') as file:
                 json_string = file.read()
             # Parse JSON string to a list of dictionaries
             inst_dict = Base.from_json_string(json_string)
