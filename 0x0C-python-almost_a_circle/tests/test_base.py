@@ -2,16 +2,6 @@
 # test_base.py
 # Brennan D Baraban <375@holbertonschool.com>
 """Defines unittests for base.py.
-
-Unittest classes:
-    TestBase_instantiation - line 23
-    TestBase_to_json_string - line 110
-    TestBase_save_to_file - line 156
-    TestBase_from_json_string - line 234
-    TestBase_create - line 288
-    TestBase_load_from_file - line 340
-    TestBase_save_to_file_csv - line 406
-    TestBase_load_from_file_csv - line 484
 """
 import os
 import unittest
@@ -20,13 +10,23 @@ from models.rectangle import Rectangle
 from models.square import Square
 
 
-class TestBase_instantiation(unittest.TestCase):
-    """Unittests for testing instantiation of the Base class."""
+class BaseTestCase(unittest.TestCase):
+    """Unittests for the Base class."""
 
-    def test_no_arg(self):
+        
+    def test_base_task1(self):
         b1 = Base()
+        self.assertEqual(b1.id, 1)
+        
         b2 = Base()
-        self.assertEqual(b1.id, b2.id - 1)
+        b3 = Base()
+        self.assertEqual(b2.id, 2)
+        self.assertEqual(b3.id, 3)
+        
+        b4 = Base(7)
+        self.assertEqual(b4.id, 7)
+        b5 = Base()
+        self.assertEqual(b1.id, 4)
 
     def test_three_bases(self):
         b1 = Base()
