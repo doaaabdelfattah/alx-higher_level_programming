@@ -10,10 +10,10 @@ if __name__ == "__main__":
 
     # Establish MySQL connection
     db = MySQLdb.connect(
-        host='localhost', 
-        port=3306, 
-        user=username, 
-        passwd=password, 
+        host='localhost',
+        port=3306,
+        user=username,
+        passwd=password,
         db=database
     )
 
@@ -25,12 +25,12 @@ if __name__ == "__main__":
     cursor.execute('SELECT * FROM states ORDER BY id ASC')
 
     # Fetching: retrieving data from a database after executing a SELECT query.
-    # fetchall(): retrieves all (remaining) rows of a query result set as a list of tuples.
+    # fetchall(): retrieves all rows of a query result set as a list of tuples.
     result = cursor.fetchall()
 
     # Process the data
     for row in result:
         print(row)
-    
+
     # good practice to close the cursor to free up resources
     cursor.close()
