@@ -18,18 +18,22 @@ if __name__ == "__main__":
     # Use execute method to make query
     cursor.execute(
         "SELECT c.name FROM states AS s \
-        INNER JOIN cities As c \
+        JOIN cities As c \
         ON s.id = c.state_id \
         WHERE s.name = {} \
         ORDER BY c.id ASC;".format(sys.argv[4]))
+    
+    cities = cursor.fetchall()
+    citiesNames = [city[0] for city in cities]
+    print(', '.join(citiesNames))
 
-    result = cursor.fetchall()
-    # Process the data
-    # Extract city names from the result and store them in a list
-    city_names = [row[0] for row in result]
+    # result = cursor.fetchall()
+    # # Process the data
+    # # Extract city names from the result and store them in a list
+    # city_names = [row[0] for row in result]
 
-    # Join the city names with commas
-    city_names_str = ", ".join(city_names)
+    # # Join the city names with commas
+    # city_names_str = ", ".join(city_names)
 
-    # Print the concatenated city names
-    print(city_names_str)
+    # # Print the concatenated city names
+    # print(city_names_str)
