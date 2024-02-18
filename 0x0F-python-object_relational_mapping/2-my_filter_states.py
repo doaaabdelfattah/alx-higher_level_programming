@@ -7,6 +7,7 @@ import sys
 if __name__ == "__main__":
     # Establish MySQL connection
     db = MySQLdb.connect(
+        host='localhost',
         port=3306,
         user=sys.argv[1],
         passwd=sys.argv[2],
@@ -16,7 +17,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
     # Use execute method to make query
     cursor.execute(
-        "SELECT * FROM states WHERE name LIKE 'N%'")
+        "SELECT * FROM states WHERE name ='{}'".format(sys.argv[4]))
     # Fetching: retrieving data from a database after executing a SELECT query.
     # fetchall(): retrieves all rows of a query result set as a list of tuples.
     result = cursor.fetchall()
