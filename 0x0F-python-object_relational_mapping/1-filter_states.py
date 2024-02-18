@@ -23,7 +23,7 @@ if __name__ == "__main__":
 
     # Execute SELECT query to retrieve states, sorted by id in ascending order
     # Use execute method to make query
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id")
+    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
     # Fetching: retrieving data from a database after executing a SELECT query.
     # fetchall(): retrieves all rows of a query result set as a list of tuples.
     result = cursor.fetchall()
