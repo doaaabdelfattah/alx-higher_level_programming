@@ -24,5 +24,11 @@ if __name__ == "__main__":
 
     result = cursor.fetchall()
     # Process the data
-    for row in result:
-        print(row)
+    # Extract city names from the result and store them in a list
+    city_names = [row[0] for row in result]
+
+    # Join the city names with commas
+    city_names_str = ", ".join(city_names)
+    
+    # Print the concatenated city names
+    print(city_names_str)
