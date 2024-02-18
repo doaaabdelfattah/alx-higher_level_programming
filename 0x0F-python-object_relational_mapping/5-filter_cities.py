@@ -17,10 +17,11 @@ if __name__ == "__main__":
     cursor = db.cursor()
     # Use execute method to make query
     cursor.execute(
-        "SELECT c.name FROM states AS s "
-        "INNER JOIN cities As c "
-        "ON s.id = c.state_id "
-        "WHERE s.name = {};".format(sys.argv[4]))
+        "SELECT c.name FROM states AS s \
+        INNER JOIN cities As c \
+        ON s.id = c.state_id \
+        WHERE s.name = {} \
+        ORDER BY c.id ASC;".format(sys.argv[4]))
 
     result = cursor.fetchall()
     # Process the data
@@ -29,6 +30,6 @@ if __name__ == "__main__":
 
     # Join the city names with commas
     city_names_str = ", ".join(city_names)
-    
+
     # Print the concatenated city names
     print(city_names_str)
