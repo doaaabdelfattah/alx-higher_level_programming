@@ -24,5 +24,4 @@ if __name__ == "__main__":
     # Process the data
     for row in result:
         print(row)
-    # good practice to close the cursor to free up resources
-    cursor.close()
+
