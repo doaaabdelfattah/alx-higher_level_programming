@@ -21,7 +21,6 @@ if __name__ == "__main__":
         "INNER JOIN cities AS c "
         "ON s.id = c.state_id")
 
-   
     result = cursor.fetchall()
     # Process the data
     for row in result:

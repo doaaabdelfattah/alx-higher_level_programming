@@ -18,7 +18,7 @@ if __name__ == "__main__":
     # Use execute method to make query
     cursor.execute(
         "SELECT * FROM states WHERE name ='{}'".format(sys.argv[4]))
-   
+
     result = cursor.fetchall()
     # Process the data
     for row in result:
