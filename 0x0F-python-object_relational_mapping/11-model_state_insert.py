@@ -15,7 +15,7 @@ if __name__ == "__main__":
     passwd = sys.argv[2]
     db = sys.argv[3]
 
-    url = f'mysql+mysqldb://{user}:{passwd}@{host}/{db}'
+    url = f'mysql+mysqldb://{user}:{passwd}@localhost:3306/{db}'
     engine = create_engine(url, pool_pre_ping=True)
 
     Session = sessionmaker(bind=engine)
