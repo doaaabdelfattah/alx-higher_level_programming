@@ -20,7 +20,7 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    result = session.query(State).order_by(State.id).all()
+    result = session.query(State)
     a = False
     for row in result:
         if sys.argv[4] == row.name:
