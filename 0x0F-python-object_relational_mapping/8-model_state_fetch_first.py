@@ -22,8 +22,8 @@ if __name__ == "__main__":
     session = Session()
     row = session.query(State).order_by(State.id).first()
     
-    if row:
-        print("{}: {}".format(row.id, row.name))
+    if row is None:
+        print("Nothing")
     else:
-        pass
+        print("{}: {}".format(row.id, row.name))
 
