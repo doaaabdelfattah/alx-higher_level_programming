@@ -1,0 +1,24 @@
+#!/usr/bin/python3
+'''Response header value #0
+'''
+import requests
+import sys
+import json
+
+if __name__ == "__main__":
+    url = 'http://0.0.0.0:5000/search_user'
+    if sys.argv[1]:
+        letter=sys.argv[1]
+    else:
+        letter=""
+    payload = {'q': letter}
+    r = requests.post(url, data=payload)
+    try:
+        res = r.json()
+        if res == {}:
+            print("No result")
+        else:
+            print("[{}] {}".format(res.get("id"), res.get("name")))
+    except ValueError:
+        print("Not a valid JSON")
+
