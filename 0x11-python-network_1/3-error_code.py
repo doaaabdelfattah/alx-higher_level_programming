@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''Response header value #0
+''' Error code #0
 '''
 import urllib.request
 import urllib.error
@@ -10,7 +10,7 @@ if __name__ == "__main__":
 
     req = urllib.request.Request(url)
     try:
-        with urllib.request.urlopen(url) as response:
-            print(response.read())
+        with urllib.request.urlopen(req) as response:
+            print(response.read().decode('utf-8'))  
     except urllib.error.HTTPError as e:
         print("Error code: {}".format(e.code))
