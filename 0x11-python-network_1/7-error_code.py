@@ -2,7 +2,6 @@
 ''' Error code #0
 '''
 import requests
-import urllib.error
 import sys
 
 if __name__ == "__main__":
