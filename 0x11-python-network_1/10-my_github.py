@@ -3,20 +3,16 @@
 '''
 import requests
 import sys
+from requests.auth import HTTPBasicAuth
 
 if __name__ == "__main__":
-    url = 'http://0.0.0.0:5000/search_user'
-    if len(sys.argv) == 1:
-        letter = sys.argv[1]
-    else:
-        letter = ""
-    payload = {'q': letter}
-    r = requests.post(url, data=payload)
-    try:
-        res = r.json()
-        if res == {}:
-            print("No result")
-        else:
-            print("[{}] {}".format(res.get("id"), res.get("name")))
-    except ValueError:
-        print("Not a valid JSON")
+    username = sys.argv[1]
+    password = sys.argv[2]
+
+    # Setup Basic Authentication with the provided username and personal access 
+    basic = HTTPBasicAuth(username, password)
+    # Send a GET request to the GitHub API to retrieve user information
+    r = requests.get("https://api.github.com/user", auth=basic)
+    # Display the user's id
+    user_id = r.json().get('id')
+    print(user_id)
