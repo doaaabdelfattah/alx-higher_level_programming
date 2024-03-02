@@ -9,7 +9,7 @@ if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
 
-    # Setup Basic Authentication with the provided username and personal access 
+    # Setup Basic Authentication with the provided username and personal access
     basic = HTTPBasicAuth(username, password)
     # Send a GET request to the GitHub API to retrieve user information
     r = requests.get("https://api.github.com/user", auth=basic)
