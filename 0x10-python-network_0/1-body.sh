@@ -1,3 +1,3 @@
 #!/bin/bash
 # cURL to the end
-curl -s -w "%{http_code}" "$1"
+curl -sL "$1"
